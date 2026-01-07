@@ -55,7 +55,7 @@ export const Projects = () => {
           <p className="text-center text-muted-foreground mt-8 font-mono">
             ...and many more on{" "}
             <a
-              href="https://github.com"
+              href="https://github.com/rohitmanohar2108?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary link-underline"
