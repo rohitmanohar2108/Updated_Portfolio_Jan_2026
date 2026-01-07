@@ -83,7 +83,7 @@ const CodingProgress = () => {
                         fill="none"
                         stroke="currentColor"
                         strokeWidth={baseStrokeWidth}
-                        className="text-muted/10"
+                        className="text-muted/20"
                       />
                     );
                   })}
