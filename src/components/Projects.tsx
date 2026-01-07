@@ -37,7 +37,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section className="py-16">
+    <section className="py-16 border-t border-border">
       <h2 className="font-mono font-bold text-2xl md:text-3xl mb-8">
         Projects & Implementations
       </h2>
