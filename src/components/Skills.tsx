@@ -15,7 +15,9 @@ const skillCategories = [
   },
   {
     title: "Relevant Courses",
-    skills: ["Data Structures & Algorithms", "Operating Systems", "Object-Oriented Programming"],
+    skills: ["Data Structures & Algorithms", "Operating Systems",
+      "Object-Oriented Programming", "Database management system", 
+      "Computer Networks", "Software Engineering", "Artificial Intelligence", "Wireless Network", "Cloud Computing"],
   },
 ];
 
