@@ -8,6 +8,7 @@ const projects = [
     technologies: ["MySQL", "React.js", "Node.js", "Express.js"],
     type: "Project" as const,
     period: "Feb 2024 – Mar 2024",
+    githubUrl: "https://github.com/rohitmanohar2108/Airline_Reservation_System"
   },
   {
     title: "Image Super Resolution",
@@ -16,6 +17,7 @@ const projects = [
     technologies: ["Python", "TensorFlow", "Keras", "Deep Learning"],
     type: "Project" as const,
     period: "Feb 2025 – Mar 2025",
+    githubUrl: "https://github.com/rohitmanohar2108/image-resolution"
   },
   {
     title: "Real-Time Chat Application",
@@ -24,6 +26,7 @@ const projects = [
     technologies: ["Node.js", "Socket.IO", "Redis", "PostgreSQL", "Next.js"],
     type: "Project" as const,
     period: "Dec 2025 – Present",
+    githubUrl: "https://github.com/rohitmanohar2108/Real_Time_Chat_Application"
   },
   {
     title: "Real-Time Crypto Execution Cost Simulator",
@@ -32,6 +35,7 @@ const projects = [
     technologies: ["Python", "WebSockets", "Asyncio", "scikit-learn"],
     type: "Project" as const,
     period: "April 2025",
+    githubUrl: "https://github.com/rohitmanohar2108/Crypto-Trade-Simulator"
   },
 ];
 
