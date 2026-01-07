@@ -1,5 +1,7 @@
 import { TechBadge } from "./TechBadge";
 import { ExternalLink, Github } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+
 
 interface ProjectCardProps {
   title: string;
@@ -50,7 +52,7 @@ export const ProjectCard = ({
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
         >
-          <Github className="h-4 w-4" />
+          <FaGithub className="h-4 w-4" />
           View Code →
         </a>
       </div>
