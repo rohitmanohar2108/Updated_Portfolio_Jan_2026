@@ -51,6 +51,19 @@ export const Projects = () => {
           <ProjectCard key={project.title} {...project} />
         ))}
       </div>
+      <div>
+          <p className="text-center text-muted-foreground mt-8 font-mono">
+            ...and many more on{" "}
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary link-underline"
+            >
+              GitHub
+            </a>
+          </p>
+        </div>
     </section>
   );
 };
