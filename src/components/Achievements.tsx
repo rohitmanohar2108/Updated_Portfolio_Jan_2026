@@ -70,6 +70,7 @@ export const Achievements = () => {
             </p>
           </div>
         </div>
+        
       </div>
     </section>
   );
