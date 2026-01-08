@@ -6,7 +6,7 @@ const CodingProgress = () => {
 
   const difficulties = [
     { name: 'Hard', solved: 62, total: 254, color: 'hsl(0, 72%, 51%)', glowColor: 'rgba(239, 68, 68, 0.6)' },
-    { name: 'Medium', solved: 91, total: 438, color: 'hsl(45, 93%, 47%)', glowColor: 'rgba(234, 179, 8, 0.6)' },
+    { name: 'Medium', solved: 92, total: 438, color: 'hsl(45, 93%, 47%)', glowColor: 'rgba(234, 179, 8, 0.6)' },
     { name: 'Easy', solved: 85, total: 306, color: 'hsl(142, 76%, 36%)', glowColor: 'rgba(34, 197, 94, 0.6)' },
   ];
 
