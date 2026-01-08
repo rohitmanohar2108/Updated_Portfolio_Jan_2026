@@ -15,6 +15,7 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
+          
          <CodingProgress />
           <div id="projects">
             <Projects />
