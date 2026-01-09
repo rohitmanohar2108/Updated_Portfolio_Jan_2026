@@ -3,21 +3,21 @@ import { TechBadge } from "./TechBadge";
 const skillCategories = [
   {
     title: "Languages",
-    skills: ["C/C++", "Python", "SQL", "JavaScript", "TypeScript"],
+    skills: ["C/C++", "SQL", "JavaScript", "TypeScript"],
   },
   {
     title: "Frameworks & Databases",
-    skills: ["React.js", "Node.js", "Express.js", "MySQL", "PostgreSQL", "TensorFlow", "Keras"],
+    skills: ["React.js", "Node.js", "Express.js", "MySQL", "PostgreSQL", "MongoDB"],
   },
   {
     title: "Tools & Cloud",
-    skills: ["VS Code", "Postman", "Aiven Cloud", "Git"],
+    skills: ["VS Code", "Github", "Socket.IO", "Postman", "Aiven Cloud", "Git"],
   },
   {
     title: "Relevant Courses",
     skills: ["Data Structures & Algorithms", "Operating Systems",
       "Object-Oriented Programming", "Database management system", 
-      "Computer Networks", "Software Engineering", "Artificial Intelligence", "Wireless Network", "Cloud Computing"],
+      "Computer Networks", "Software Engineering", "Artificial Intelligence", "Wireless Network", "Cloud Computing", "Cloud Security"],
   },
 ];
 

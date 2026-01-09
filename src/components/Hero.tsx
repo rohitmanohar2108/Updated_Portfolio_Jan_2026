@@ -11,7 +11,7 @@ export const Hero = () => {
         <span className="link-underline cursor-pointer">Rohit Manohar</span>,
         I build cool stuff using{" "}
         <TechBadge tech="C/C++" className="mx-1" />,{" "}
-        <TechBadge tech="Python" className="mx-1" />,{" "}
+        <TechBadge tech="Node.js" className="mx-1" />,{" "}
         <TechBadge tech="TypeScript" className="mx-1" /> and{" "}
         <TechBadge tech="JavaScript" className="mx-1" />
       </h1>
@@ -37,9 +37,6 @@ export const Hero = () => {
           </li>
           <li className="flex items-center gap-2">
             <span className="text-primary">•</span> Real-Time Systems & WebSockets
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="text-primary">•</span> Machine Learning & Computer Vision
           </li>
           <li className="flex items-center gap-2">
             <span className="text-primary">•</span> Distributed Systems
