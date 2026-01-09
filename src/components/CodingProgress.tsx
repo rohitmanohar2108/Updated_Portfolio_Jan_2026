@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { CardSpotlight } from './ui/card-spotlight';
 
 
 const CodingProgress = () => {
@@ -47,9 +48,9 @@ const CodingProgress = () => {
         </div>
         <div>
           <div className="flex justify-center">
-            <div className="group  w-full sm:w-auto sm:max-w-none border border-border rounded-lg p-6 bg-card md:hover:border-primary/50 transition-all duration-300 md:hover:shadow-lg sm:p-10 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
+            <CardSpotlight className="group  w-full sm:w-auto sm:max-w-none border border-border rounded-lg p-6 bg-card md:hover:border-primary/50 transition-all duration-300 md:hover:shadow-lg sm:p-10 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
               {/* Circular Progress Rings */}
-              <div className="relative">
+              <div className="relative z-50">
                 <svg width={size} height={size} className="transform -rotate-90">
                   <defs>
                     {difficulties.map((difficulty) => (
@@ -122,7 +123,7 @@ const CodingProgress = () => {
               </div>
 
               {/* Legend */}
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 relative z-50">
                 {[...difficulties].reverse().map((difficulty) => {
                   const isHovered = hoveredDifficulty === difficulty.name;
                   return (
@@ -144,19 +145,19 @@ const CodingProgress = () => {
                         }}
                       />
                       <span 
-                        className="font-medium transition-colors duration-300"
+                        className="font-medium hover:text-bold transition-colors duration-300"
                         style={{ color: isHovered ? difficulty.color : 'inherit' }}
                       >
                         {difficulty.name}
                       </span>
-                      <span className="text-muted-foreground">
+                      <span className="text-muted-foreground ">
                         {difficulty.solved}/{difficulty.total}
                       </span>
                     </div>
                   );
                 })}
               </div>
-            </div>
+            </CardSpotlight>
           </div>
         </div>
       </div>

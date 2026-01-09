@@ -1,5 +1,5 @@
 import { ProjectCard } from "./ProjectCard";
-
+import { CardSpotlight } from "./ui/card-spotlight";
 const projects = [
   {
     title: "AirWise – Airline Reservation System",

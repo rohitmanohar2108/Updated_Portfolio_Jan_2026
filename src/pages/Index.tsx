@@ -8,6 +8,8 @@ import CodingProgress from "@/components/CodingProgress";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { TextGenerateEffectDemo } from "@/components/TextGenerateEffectDemo";
 
+import { BackgroundLines } from "@/components/ui/background-lines";
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -15,11 +17,11 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
-          
          <CodingProgress />
           <div id="projects">
             <Projects />
           </div>
+
           <div id="skills">
             <Skills />
           </div>

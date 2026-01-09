@@ -1,4 +1,5 @@
 import { Award, Code, Medal, Users } from "lucide-react";
+import { CardSpotlight } from "./ui/card-spotlight";
 
 const achievements = [
   {
@@ -34,7 +35,7 @@ export const Achievements = () => {
         {achievements.map((achievement) => {
           const Icon = achievement.icon;
           return (
-            <div
+            <CardSpotlight
               key={achievement.title}
               className="flex items-start gap-4 p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-colors"
             >
@@ -49,13 +50,13 @@ export const Achievements = () => {
                   {achievement.description}
                 </p>
               </div>
-            </div>
+            </CardSpotlight>
           );
         })}
       </div>
 
-      <div className="mt-8 p-6 rounded-lg border border-border bg-card">
-        <div className="flex items-start gap-4">
+      <CardSpotlight className="mt-8 p-6 rounded-lg border border-border bg-card">
+        <div className="flex items-start gap-4 relative z-50">
           <div className="p-2 rounded-md bg-accent/20">
             <Users className="h-5 w-5 text-accent" />
           </div>
@@ -71,7 +72,7 @@ export const Achievements = () => {
           </div>
         </div>
         
-      </div>
+      </CardSpotlight>
     </section>
   );
 };
