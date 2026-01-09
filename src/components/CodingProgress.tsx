@@ -1,14 +1,33 @@
-import { useState } from 'react';
-import { CardSpotlight } from './ui/card-spotlight';
-
+import { useState } from "react";
+import { CardSpotlight } from "./ui/card-spotlight";
 
 const CodingProgress = () => {
-  const [hoveredDifficulty, setHoveredDifficulty] = useState<string | null>(null);
+  const [hoveredDifficulty, setHoveredDifficulty] = useState<string | null>(
+    null
+  );
 
   const difficulties = [
-    { name: 'Hard', solved: 62, total: 254, color: 'hsl(0, 72%, 51%)', glowColor: 'rgba(239, 68, 68, 0.6)' },
-    { name: 'Medium', solved: 92, total: 438, color: 'hsl(45, 93%, 47%)', glowColor: 'rgba(234, 179, 8, 0.6)' },
-    { name: 'Easy', solved: 85, total: 306, color: 'hsl(142, 76%, 36%)', glowColor: 'rgba(34, 197, 94, 0.6)' },
+    {
+      name: "Hard",
+      solved: 62,
+      total: 254,
+      color: "hsl(0, 72%, 51%)",
+      glowColor: "rgba(239, 68, 68, 0.6)",
+    },
+    {
+      name: "Medium",
+      solved: 92,
+      total: 438,
+      color: "hsl(45, 93%, 47%)",
+      glowColor: "rgba(234, 179, 8, 0.6)",
+    },
+    {
+      name: "Easy",
+      solved: 85,
+      total: 306,
+      color: "hsl(142, 76%, 36%)",
+      glowColor: "rgba(34, 197, 94, 0.6)",
+    },
   ];
 
   const totalSolved = difficulties.reduce((acc, d) => acc + d.solved, 0);
@@ -19,9 +38,13 @@ const CodingProgress = () => {
   const baseStrokeWidth = 10;
   const ringGap = 14;
 
-  const isActive = (name: string) => hoveredDifficulty === null || hoveredDifficulty === name;
+  const isActive = (name: string) =>
+    hoveredDifficulty === null || hoveredDifficulty === name;
 
-  const getRingProps = (index: number, difficulty: typeof difficulties[0]) => {
+  const getRingProps = (
+    index: number,
+    difficulty: (typeof difficulties)[0]
+  ) => {
     const radius = 70 - index * ringGap;
     const circumference = 2 * Math.PI * radius;
     const percentage = difficulty.solved / difficulty.total;
@@ -37,7 +60,10 @@ const CodingProgress = () => {
   };
 
   return (
-    <section id="progress" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-border">
+    <section
+      id="progress"
+      className="py-20 px-4 sm:px-6 lg:px-8 border-t border-border"
+    >
       <div className="max-w-6xl mx-auto">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 font-mono">
@@ -51,7 +77,11 @@ const CodingProgress = () => {
             <CardSpotlight className="group  w-full sm:w-auto sm:max-w-none border border-border rounded-lg p-6 bg-card md:hover:border-primary/50 transition-all duration-300 md:hover:shadow-lg sm:p-10 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
               {/* Circular Progress Rings */}
               <div className="relative z-50">
-                <svg width={size} height={size} className="transform -rotate-90">
+                <svg
+                  width={size}
+                  height={size}
+                  className="transform -rotate-90"
+                >
                   <defs>
                     {difficulties.map((difficulty) => (
                       <filter
@@ -90,7 +120,10 @@ const CodingProgress = () => {
 
                   {/* Progress arcs */}
                   {difficulties.map((difficulty, index) => {
-                    const { radius, strokeDasharray, isHovered } = getRingProps(index, difficulty);
+                    const { radius, strokeDasharray, isHovered } = getRingProps(
+                      index,
+                      difficulty
+                    );
                     return (
                       <circle
                         key={difficulty.name}
@@ -105,9 +138,13 @@ const CodingProgress = () => {
                         className="transition-all duration-300 cursor-pointer"
                         style={{
                           opacity: isActive(difficulty.name) ? 1 : 0.15,
-                          filter: isHovered ? `url(#glow-${difficulty.name})` : 'none',
+                          filter: isHovered
+                            ? `url(#glow-${difficulty.name})`
+                            : "none",
                         }}
-                        onMouseEnter={() => setHoveredDifficulty(difficulty.name)}
+                        onMouseEnter={() =>
+                          setHoveredDifficulty(difficulty.name)
+                        }
                         onMouseLeave={() => setHoveredDifficulty(null)}
                       />
                     );
@@ -116,9 +153,13 @@ const CodingProgress = () => {
 
                 {/* Center text */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-4xl font-bold text-foreground">{totalSolved}</span>
+                  <span className="text-4xl font-bold text-foreground">
+                    {totalSolved}
+                  </span>
                   <div className="w-10 h-px bg-muted-foreground/40 my-1" />
-                  <span className="text-lg text-muted-foreground">{totalProblems}</span>
+                  <span className="text-lg text-muted-foreground">
+                    {totalProblems}
+                  </span>
                 </div>
               </div>
 
@@ -140,17 +181,24 @@ const CodingProgress = () => {
                         className="w-3.5 h-3.5 rounded-full transition-all duration-300"
                         style={{
                           backgroundColor: difficulty.color,
-                          transform: isHovered ? 'scale(1.4)' : 'scale(1)',
-                          boxShadow: isHovered ? `0 0 12px ${difficulty.glowColor}` : 'none',
+                          transform: isHovered ? "scale(1.4)" : "scale(1)",
+                          boxShadow: isHovered
+                            ? `0 0 12px ${difficulty.glowColor}`
+                            : "none",
                         }}
                       />
-                      <span 
+                      <span
                         className="font-medium hover:text-bold transition-colors duration-300"
-                        style={{ color: isHovered ? difficulty.color : 'inherit' }}
+                        style={{
+                          color: isHovered ? difficulty.color : "inherit",
+                        }}
                       >
                         {difficulty.name}
                       </span>
-                      <span className="text-muted-foreground ">
+
+                      <span className="text-muted-foreground font-medium hover:text-bold transition-colors duration-300" style={{
+                        color: isHovered ? difficulty.color : "inherit",
+                      }}>
                         {difficulty.solved}/{difficulty.total}
                       </span>
                     </div>

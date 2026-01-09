@@ -5,10 +5,7 @@ import { Skills } from "@/components/Skills";
 import { Achievements } from "@/components/Achievements";
 import { Footer } from "@/components/Footer";
 import CodingProgress from "@/components/CodingProgress";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { TextGenerateEffectDemo } from "@/components/TextGenerateEffectDemo";
 
-import { BackgroundLines } from "@/components/ui/background-lines";
 
 const Index = () => {
   return (
