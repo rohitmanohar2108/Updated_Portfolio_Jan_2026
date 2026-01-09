@@ -12,8 +12,9 @@ export const Hero = () => {
         I build cool stuff using{" "}
         <TechBadge tech="C/C++" className="mx-1" />,{" "}
         <TechBadge tech="Node.js" className="mx-1" />,{" "}
-        <TechBadge tech="TypeScript" className="mx-1" /> and{" "}
-        <TechBadge tech="JavaScript" className="mx-1" />
+        <TechBadge tech="TypeScript" className="mx-1" />, {" "}
+        <TechBadge tech="JavaScript" className="mx-1" /> and{" "}
+         <TechBadge tech="socket.io" className="mx-1" />
       </h1>
       
       <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
