@@ -6,7 +6,6 @@ import { Achievements } from "@/components/Achievements";
 import { Footer } from "@/components/Footer";
 import CodingProgress from "@/components/CodingProgress";
 
-
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -14,7 +13,7 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
-         <CodingProgress />
+          <CodingProgress />
           <div id="projects">
             <Projects />
           </div>

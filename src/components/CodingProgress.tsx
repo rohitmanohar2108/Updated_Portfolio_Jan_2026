@@ -74,7 +74,7 @@ const CodingProgress = () => {
         </div>
         <div>
           <div className="flex justify-center">
-            <CardSpotlight className="group  w-full sm:w-auto sm:max-w-none border border-border rounded-lg p-6 bg-card md:hover:border-primary/50 transition-all duration-300 md:hover:shadow-lg sm:p-10 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
+            <CardSpotlight className="group  w-full sm:w-auto sm:max-w-none border border-border rounded-lg p-6 bg-card  transition-all duration-300 md:hover:shadow-lg sm:p-10 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
               {/* Circular Progress Rings */}
               <div className="relative z-50">
                 <svg
