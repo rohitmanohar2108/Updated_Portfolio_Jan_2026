@@ -55,7 +55,7 @@ export const Achievements = () => {
         })}
       </div>
 
-      <CardSpotlight className="mt-8 p-6 rounded-lg border border-border bg-card">
+      <CardSpotlight className="mt-8 p-6 rounded-lg border border-border bg-card ">
         <div className="flex items-start gap-4 relative z-50">
           <div className="p-2 rounded-md bg-accent/20">
             <Users className="h-5 w-5 text-accent" />
