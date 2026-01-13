@@ -37,7 +37,7 @@ export const Achievements = () => {
           return (
             <CardSpotlight
               key={achievement.title}
-              className="flex items-start gap-4 p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-colors"
+              className="flex items-start gap-4 p-4 rounded-lg border border-border bg-card  transition-colors"
             >
               <div className="p-2 rounded-md bg-primary/10">
                 <Icon className="h-5 w-5 text-primary" />

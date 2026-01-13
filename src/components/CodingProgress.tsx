@@ -196,9 +196,12 @@ const CodingProgress = () => {
                         {difficulty.name}
                       </span>
 
-                      <span className="text-muted-foreground font-medium hover:text-bold transition-colors duration-300" style={{
-                        color: isHovered ? difficulty.color : "inherit",
-                      }}>
+                      <span
+                        className="text-muted-foreground font-medium hover:text-bold transition-colors duration-300"
+                        style={{
+                          color: isHovered ? difficulty.color : "inherit",
+                        }}
+                      >
                         {difficulty.solved}/{difficulty.total}
                       </span>
                     </div>

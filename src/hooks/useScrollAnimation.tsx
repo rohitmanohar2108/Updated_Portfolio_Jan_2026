@@ -1,28 +1,60 @@
 import { useEffect, useRef, useState } from 'react';
 
-export const useScrollAnimation = (threshold = 0.1) => {
+interface UseScrollAnimationOptions {
+  threshold?: number;
+  rootMargin?: string;
+  triggerOnce?: boolean;
+}
+
+export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
+  const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options;
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+          if (triggerOnce) {
+            observer.unobserve(element);
+          }
+        } else if (!triggerOnce) {
+          setIsVisible(false);
         }
       },
-      { threshold }
+      { threshold, rootMargin }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(element);
 
     return () => observer.disconnect();
-  }, [threshold]);
+  }, [threshold, rootMargin, triggerOnce]);
 
   return { ref, isVisible };
 };
 
-export default useScrollAnimation;
+export const useParallax = (speed: number = 0.5) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const rect = element.getBoundingClientRect();
+      const elementTop = rect.top + scrolled;
+      const offset = (scrolled - elementTop) * speed;
+      element.style.transform = `translateY(${offset}px)`;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [speed]);
+
+  return ref;
+};

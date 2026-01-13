@@ -1,3 +1,5 @@
+import { useTypewriter } from "@/hooks/useTypewriter";
+import AnimatedSection from "./AnimatedSection";
 import { ProjectCard } from "./ProjectCard";
 import { CardSpotlight } from "./ui/card-spotlight";
 const projects = [
@@ -8,7 +10,7 @@ const projects = [
     technologies: ["MySQL", "React.js", "Node.js", "Express.js"],
     type: "Project" as const,
     period: "Feb 2024 – Mar 2024",
-    githubUrl: "https://github.com/rohitmanohar2108/Airline_Reservation_System"
+    githubUrl: "https://github.com/rohitmanohar2108/Airline_Reservation_System",
   },
   {
     title: "Image Super Resolution",
@@ -17,7 +19,7 @@ const projects = [
     technologies: ["Python", "TensorFlow", "Keras", "Deep Learning"],
     type: "Project" as const,
     period: "Feb 2025 – Mar 2025",
-    githubUrl: "https://github.com/rohitmanohar2108/image-resolution"
+    githubUrl: "https://github.com/rohitmanohar2108/image-resolution",
   },
   {
     title: "Real-Time Chat Application",
@@ -26,7 +28,7 @@ const projects = [
     technologies: ["Node.js", "Socket.IO", "Redis", "PostgreSQL", "Next.js"],
     type: "Project" as const,
     period: "Dec 2025 – Present",
-    githubUrl: "https://github.com/rohitmanohar2108/Real_Time_Chat_Application"
+    githubUrl: "https://github.com/rohitmanohar2108/Real_Time_Chat_Application",
   },
   {
     title: "Real-Time Crypto Execution Cost Simulator",
@@ -35,35 +37,60 @@ const projects = [
     technologies: ["Python", "WebSockets", "Asyncio", "scikit-learn"],
     type: "Project" as const,
     period: "April 2025",
-    githubUrl: "https://github.com/rohitmanohar2108/Crypto-Trade-Simulator"
+    githubUrl: "https://github.com/rohitmanohar2108/Crypto-Trade-Simulator",
   },
 ];
 
 export const Projects = () => {
+  const OngoingWork = [
+    "Cloud-Web-IDE ",
+    "Real_Time_Device_Tracker",
+    "Connects riders with drivers for on-demand transportation.",
+    "Coding skills",
+  ];
+  const { text } = useTypewriter({
+    words: OngoingWork,
+    typeSpeed: 80,
+    deleteSpeed: 40,
+  });
   return (
     <section className="py-16 border-t border-border">
       <h2 className="font-mono font-bold text-2xl md:text-3xl mb-8">
         Projects & Implementations
       </h2>
-      
+
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
       </div>
+
       <div>
-          <p className="text-center text-muted-foreground mt-8 font-mono">
-            ...and many more on{" "}
-            <a
-              href="https://github.com/rohitmanohar2108?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary link-underline"
-            >
-              GitHub
-            </a>
-          </p>
+        <div className="hidden sm:block">
+          <AnimatedSection animation="fade-up" delay={600}>
+            <div className="flex items-center gap-2 mt-4">
+              <span className="text-muted-foreground font-mono text-sm ">
+                Currently working on:
+              </span>
+              <span className="font-mono text-primary font-medium min-w-[200px]">
+                {text}
+                <span className="animate-pulse ml-0.5">|</span>
+              </span>
+            </div>
+          </AnimatedSection>
         </div>
+        <p className=" text-center md:text-start text-muted-foreground mt-2 font-mono">
+          ...and many more on{" "}
+          <a
+            href="https://github.com/rohitmanohar2108?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary link-underline"
+          >
+            GitHub
+          </a>
+        </p>
+      </div>
     </section>
   );
 };

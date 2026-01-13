@@ -7,7 +7,14 @@ const skillCategories = [
   },
   {
     title: "Frameworks & Databases",
-    skills: ["React.js", "Node.js", "Express.js", "MySQL", "PostgreSQL", "MongoDB"],
+    skills: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+    ],
   },
   {
     title: "Tools & Cloud",
@@ -15,9 +22,18 @@ const skillCategories = [
   },
   {
     title: "Relevant Courses",
-    skills: ["Data Structures & Algorithms", "Operating Systems",
-      "Object-Oriented Programming", "Database management system", 
-      "Computer Networks", "Software Engineering", "Artificial Intelligence", "Wireless Network", "Cloud Computing", "Cloud Security"],
+    skills: [
+      "Data Structures & Algorithms",
+      "Operating Systems",
+      "Object-Oriented Programming",
+      "Database management system",
+      "Computer Networks",
+      "Software Engineering",
+      "Artificial Intelligence",
+      "Wireless Network",
+      "Cloud Computing",
+      "Cloud Security",
+    ],
   },
 ];
 
@@ -27,7 +43,7 @@ export const Skills = () => {
       <h2 className="font-mono font-bold text-2xl md:text-3xl mb-8">
         Technical Skills
       </h2>
-      
+
       <div className="space-y-6">
         {skillCategories.map((category) => (
           <div key={category.title}>
