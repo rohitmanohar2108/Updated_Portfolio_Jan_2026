@@ -53,7 +53,7 @@ export const ProjectCard = ({
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center border-r-2 border-l-2 border-b-2 border-border shadow-sm shadow-slate-700 dark:shadow-slate-300  gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
           >
             <FaGithub className="h-4 w-4" />
             View Code →
