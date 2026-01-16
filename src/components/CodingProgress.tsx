@@ -76,7 +76,9 @@ const CodingProgress = () => {
           <div className="flex justify-center">
             <CardSpotlight className="group  w-full sm:w-auto sm:max-w-none border border-border rounded-lg p-6 bg-card  transition-all duration-300 md:hover:shadow-lg sm:p-10 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
               {/* Circular Progress Rings */}
-              <div className="relative z-50">
+              <div className="relative z-50 transition-transform duration-300
+  hover:scale-105 hover:-translate-y-2
+ ">
                 <svg
                   width={size}
                   height={size}
@@ -164,13 +166,14 @@ const CodingProgress = () => {
               </div>
 
               {/* Legend */}
-              <div className="flex flex-col gap-4 relative z-50">
+              <div className="flex flex-col gap-4 relative z-50 ">
                 {[...difficulties].reverse().map((difficulty) => {
                   const isHovered = hoveredDifficulty === difficulty.name;
                   return (
                     <div
                       key={difficulty.name}
-                      className="flex items-center gap-3 cursor-pointer transition-all duration-300"
+                      className="flex items-center gap-3 cursor-pointer transition-transform duration-300
+  hover:scale-105 hover:-translate-y-2"
                       style={{
                         opacity: isActive(difficulty.name) ? 1 : 0.3,
                       }}
@@ -197,7 +200,7 @@ const CodingProgress = () => {
                       </span>
 
                       <span
-                        className="text-muted-foreground font-medium hover:text-bold transition-colors duration-300"
+                        className="text-muted-foreground font-medium hover:text-bold transition-colors duration-300 "
                         style={{
                           color: isHovered ? difficulty.color : "inherit",
                         }}

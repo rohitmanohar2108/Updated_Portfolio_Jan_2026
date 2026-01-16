@@ -21,7 +21,8 @@ export const ProjectCard = ({
   githubUrl,
 }: ProjectCardProps) => {
   return (
-    <CardSpotlight className=" group border border-border rounded-lg p-6 bg-card transition-all duration-300hover:shadow-lg">
+    <CardSpotlight className=" group border border-border rounded-lg p-6 bg-card  hover:shadow-lg transition-all duration-300
+  hover:scale-105 hover:-translate-y-2">
       <div className="">
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs font-mono text-muted-foreground relative z-50">
@@ -39,8 +40,6 @@ export const ProjectCard = ({
         <p className="text-sm text-muted-foreground mb-4 line-clamp-3 relative z-50">
           {description}
         </p>
-
-        
 
         <div className="flex flex-wrap gap-2 mb-4 relative z-50">
           {technologies.map((tech) => (

@@ -30,14 +30,15 @@ export const Achievements = () => {
       <h2 className="font-mono font-bold text-2xl md:text-3xl mb-8">
         Achievements
       </h2>
-      
+
       <div className="grid gap-4 sm:grid-cols-2">
         {achievements.map((achievement) => {
           const Icon = achievement.icon;
           return (
             <CardSpotlight
               key={achievement.title}
-              className="flex items-start gap-4 p-4 rounded-lg border border-border bg-card  transition-colors"
+              className="flex items-start gap-4 p-4 rounded-lg border border-border bg-card  transition-colors transition-transform duration-300
+  hover:scale-105 hover:-translate-y-2"
             >
               <div className="p-2 rounded-md bg-primary/10">
                 <Icon className="h-5 w-5 text-primary" />
@@ -55,7 +56,10 @@ export const Achievements = () => {
         })}
       </div>
 
-      <CardSpotlight className="mt-8 p-6 rounded-lg border border-border bg-card ">
+      <CardSpotlight
+        className="mt-8 p-6 rounded-lg border border-border bg-card transition-transform duration-300
+  hover:scale-105 hover:-translate-y-2"
+      >
         <div className="flex items-start gap-4 relative z-50">
           <div className="p-2 rounded-md bg-accent/20">
             <Users className="h-5 w-5 text-accent" />
@@ -65,13 +69,12 @@ export const Achievements = () => {
               TEDx NITK Surathkal – Executive Member
             </h3>
             <p className="text-sm text-muted-foreground">
-              Designed event posters and visual content, contributed to media strategies, 
-              and mentored 15+ students under a Summer Mentorship Program on Canva, 
-              Adobe Express, and illustration tools.
+              Designed event posters and visual content, contributed to media
+              strategies, and mentored 15+ students under a Summer Mentorship
+              Program on Canva, Adobe Express, and illustration tools.
             </p>
           </div>
         </div>
-        
       </CardSpotlight>
     </section>
   );

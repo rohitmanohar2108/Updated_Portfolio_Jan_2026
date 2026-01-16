@@ -4,8 +4,8 @@ import { TechBadge } from "./TechBadge";
 import { TextGenerateEffectDemo } from "./TextGenerateEffectDemo";
 import { Tooltip } from "@/components/ui/tooltip-card";
 
+
 export const Hero = () => {
- 
   return (
     <section className="py-16 md:py-24">
       <p className="text-lg mb-2 text-muted-foreground font-mono">Hey there,</p>
@@ -72,23 +72,43 @@ export const Hero = () => {
         . I've also solved 400+ coding problems and earned certifications in
         cloud & AI.
       </p>
-     
+
       <AnimatedSection className="pt-32 md:pt-40 lg:pt-48 pb-6 md:pb-16 lg:pb-24 px-4 md:px-8 ">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 md:mb-10 inline-flex flex-col items-center">
             <div className="flex items-center">
-              <span className="border border-black dark:border-white px-3 md:px-6 py-2 md:py-4 animate-fade-in">
+              <span
+                className="border border-black dark:border-white px-3 md:px-6 py-2 md:py-4 animate-fade-in transition-transform duration-300
+  hover:scale-105 hover:-translate-y-2
+  hover:shadow-2xl hover:shadow-black ease-out
+    transform-gpu"
+              >
                 Engineer
               </span>
-              <span className="bg-[#dcff6b] border border-black dark:border-white dark:text-black px-3 md:px-6 py-2 md:py-4 rounded-[20px] md:rounded-[40px] -ml-px animate-fade-in">
+              <span
+                className="bg-[#dcff6b] border border-black dark:border-white dark:text-black px-3 md:px-6 py-2 md:py-4 rounded-[20px] md:rounded-[40px] -ml-px animate-fade-in transition-transform duration-300
+  hover:scale-105 hover:-translate-y-2
+  hover:shadow-2xl hover:shadow-black ease-out
+    transform-gpu"
+              >
                 design
               </span>
             </div>
             <div className="flex items-center -mt-px">
-              <span className="border border-black dark:border-white px-3 md:px-6 py-2 md:py-4 animate-fade-in">
+              <span
+                className="border border-black dark:border-white px-3 md:px-6 py-2 md:py-4 animate-fade-in transition-transform duration-300
+  hover:scale-105 hover:-translate-y-2
+  hover:shadow-2xl hover:shadow-black ease-out
+    transform-gpu"
+              >
                 code
               </span>
-              <span className="border border-l-0 border-black dark:border-white px-3 md:px-6 py-2 md:py-4 animate-fade-in">
+              <span
+                className="border border-l-0 border-black dark:border-white px-3 md:px-6 py-2 md:py-4 animate-fade-in transition-transform duration-300
+  hover:scale-105 hover:-translate-y-2
+  hover:shadow-2xl hover:shadow-black ease-out
+    transform-gpu"
+              >
                 now
               </span>
             </div>
