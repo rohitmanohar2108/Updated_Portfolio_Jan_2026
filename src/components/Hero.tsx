@@ -1,14 +1,39 @@
 import { useTypewriter } from "@/hooks/useTypewriter";
+import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import { TechBadge } from "./TechBadge";
 import { TextGenerateEffectDemo } from "./TextGenerateEffectDemo";
 import { Tooltip } from "@/components/ui/tooltip-card";
-
+import VideoBackground from "./VideoBackground";
+import {
+  SiCplusplus,
+  SiJavascript,
+  SiNodedotjs,
+  SiSocketdotio,
+  SiTypescript,
+} from "react-icons/si";
 
 export const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
   return (
     <section className="py-16 md:py-24">
       <p className="text-lg mb-2 text-muted-foreground font-mono">Hey there,</p>
+
       <h1 className="text-3xl md:text-4xl font-mono font-bold mb-6">
         I'm{" "}
         <Tooltip
@@ -17,13 +42,33 @@ export const Hero = () => {
         >
           Rohit Manohar
         </Tooltip>
-        , I build cool stuff using <TechBadge tech="C/C++" className="mx-1" />,{" "}
-        <TechBadge tech="Node.js" className="mx-1" />,{" "}
-        <TechBadge tech="TypeScript" className="mx-1" />,{" "}
-        <TechBadge tech="JavaScript" className="mx-1" /> and{" "}
-        <TechBadge tech="socket.io" className="mx-1" />
+        , I build cool stuff using{" "}
+        <span className="inline-flex items-center gap-1 mx-1 text-xs text-indigo-400">
+          <SiCplusplus className="text-2xl" /> C/C++
+        </span>
+        ,{" "}
+        <span className="inline-flex items-center gap-1 mx-1 text-xs text-green-500">
+          <SiNodedotjs className="text-2xl" /> Node.js
+        </span>
+        ,{" "}
+        <span className="inline-flex items-center gap-1 mx-1 text-xs text-blue-500">
+          <SiTypescript className="text-2xl" /> TypeScript
+        </span>
+        ,{" "}
+        <span className="inline-flex items-center gap-1 mx-1 text-xs text-yellow-400">
+          <SiJavascript className="text-2xl" /> JavaScript
+        </span>{" "}
+        and{" "}
+        <span className="inline-flex items-center gap-1 mx-1 text-xs text-slate-100">
+          <SiSocketdotio className="text-2xl" /> Socket.IO
+        </span>
       </h1>
-      <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="text-lg text-muted-foreground mb-8 max-w-2xl"
+      >
         Computer Science undergrad at{" "}
         <Tooltip
           containerClassName="text-foreground font-medium link-underline cursor-pointer"
@@ -33,13 +78,18 @@ export const Hero = () => {
         </Tooltip>
         . Passionate about building scalable systems, real-time applications,
         and exploring ML/Deep Learning.
-      </p>
+      </motion.div>
 
       <div className="mb-8">
-        <h2 className="font-mono font-semibold text-sm text-muted-foreground mb-4">
+        <h2 className="font-mono font-semibold text-sm text-muted-foreground  mb-4">
           What I'm into:
         </h2>
-        <ul className="space-y-1.5 text-foreground">
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="space-y-1.5 text-foreground"
+        >
           <li className="flex items-center gap-2">
             <span className="text-primary">•</span> Full-Stack Web Development
           </li>
@@ -53,10 +103,15 @@ export const Hero = () => {
           <li className="flex items-center gap-2">
             <span className="text-primary">•</span> Distributed Systems
           </li>
-        </ul>
+        </motion.div>
       </div>
 
-      <p className="text-muted-foreground">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="text-muted-foreground"
+      >
         Over the past few years, I've built projects around{" "}
         <span className="text-foreground font-medium link-underline cursor-pointer">
           airline systems
@@ -71,7 +126,7 @@ export const Hero = () => {
         </span>
         . I've also solved 400+ coding problems and earned certifications in
         cloud & AI.
-      </p>
+      </motion.div>
 
       <AnimatedSection className="pt-32 md:pt-40 lg:pt-48 pb-6 md:pb-16 lg:pb-24 px-4 md:px-8 ">
         <div className="max-w-4xl mx-auto text-center">

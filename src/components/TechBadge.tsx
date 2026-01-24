@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { IconType } from "react-icons/lib";
 
 type TechType = "js" | "ts" | "python" | "react" | "node" | "db" | "cloud" | "default";
 
@@ -12,6 +13,8 @@ const techColors: Record<TechType, string> = {
   cloud: "bg-badge-cloud text-primary-foreground",
   default: "bg-secondary text-secondary-foreground",
 };
+
+
 
 const techMapping: Record<string, TechType> = {
   javascript: "js",

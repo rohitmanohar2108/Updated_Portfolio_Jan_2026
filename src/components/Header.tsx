@@ -21,12 +21,7 @@ export const Header = () => {
         >
           Skills
         </a>
-        <a
-          href="#achievements"
-          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
-        >
-          Achievements
-        </a>
+        
         <ThemeToggle />
       </nav>
     </header>

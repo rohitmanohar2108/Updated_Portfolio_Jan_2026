@@ -2,16 +2,17 @@ import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true); // default DARK
 
   useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setIsDark(isDarkMode);
-  }, []);
-  useEffect(() => {
-    setIsDark(false);
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("theme", "light");
+    const savedTheme = localStorage.getItem("theme");
+
+    // first visit → dark
+    const shouldBeDark = savedTheme ? savedTheme === "dark" : true;
+
+    setIsDark(shouldBeDark);
+    document.documentElement.classList.toggle("dark", shouldBeDark);
+    localStorage.setItem("theme", shouldBeDark ? "dark" : "light");
   }, []);
 
   const toggleTheme = () => {
@@ -20,15 +21,6 @@ export const ThemeToggle = () => {
     document.documentElement.classList.toggle("dark", newIsDark);
     localStorage.setItem("theme", newIsDark ? "dark" : "light");
   };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const shouldBeDark = savedTheme === "dark" || (!savedTheme && prefersDark);
-    
-    setIsDark(shouldBeDark);
-    document.documentElement.classList.toggle("dark", shouldBeDark);
-  }, []);
 
   return (
     <button

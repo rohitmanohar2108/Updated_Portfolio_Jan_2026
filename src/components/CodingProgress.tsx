@@ -1,11 +1,28 @@
 import { useState } from "react";
 import { CardSpotlight } from "./ui/card-spotlight";
-
+import { motion } from "framer-motion";
+import { Code2Icon } from "lucide-react";
 const CodingProgress = () => {
   const [hoveredDifficulty, setHoveredDifficulty] = useState<string | null>(
-    null
+    null,
   );
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
   const difficulties = [
     {
       name: "Hard",
@@ -43,7 +60,7 @@ const CodingProgress = () => {
 
   const getRingProps = (
     index: number,
-    difficulty: (typeof difficulties)[0]
+    difficulty: (typeof difficulties)[0],
   ) => {
     const radius = 70 - index * ringGap;
     const circumference = 2 * Math.PI * radius;
@@ -63,22 +80,32 @@ const CodingProgress = () => {
     <section
       id="progress"
       className="py-20 px-4 sm:px-6 lg:px-8 border-t border-border"
+      
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl text-center">
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 font-mono">
-            <span className="text-primary">&lt;</span>
-            Leetcode Progress
-            <span className="text-primary">/&gt;</span>
-          </h2>
+           <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm mb-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <Code2Icon size={14} className="text-accent" />
+            <span className="text-xs font-mono text-muted-foreground">LeetCode Progress</span>
+          </motion.div>
         </div>
         <div>
           <div className="flex justify-center">
-            <CardSpotlight className="group  w-full sm:w-auto sm:max-w-none border border-border rounded-lg p-6 bg-card  transition-all duration-300 md:hover:shadow-lg sm:p-10 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
+            <CardSpotlight className="group  w-full sm:w-auto sm:max-w-none border border-border rounded-2xl p-6 bg-card  transition-all duration-300 md:hover:shadow-lg sm:p-10 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
               {/* Circular Progress Rings */}
-              <div className="relative z-50 transition-transform duration-300
-  hover:scale-105 hover:-translate-y-2
- ">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                className="relative z-50 
+ "
+              >
                 <svg
                   width={size}
                   height={size}
@@ -124,7 +151,7 @@ const CodingProgress = () => {
                   {difficulties.map((difficulty, index) => {
                     const { radius, strokeDasharray, isHovered } = getRingProps(
                       index,
-                      difficulty
+                      difficulty,
                     );
                     return (
                       <circle
@@ -163,7 +190,7 @@ const CodingProgress = () => {
                     {totalProblems}
                   </span>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Legend */}
               <div className="flex flex-col gap-4 relative z-50 ">
@@ -190,23 +217,31 @@ const CodingProgress = () => {
                             : "none",
                         }}
                       />
-                      <span
+                      <motion.div
+                        whileHover={{ scale: 1.02, y: -2 }}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
                         className="font-medium hover:text-bold transition-colors duration-300"
                         style={{
                           color: isHovered ? difficulty.color : "inherit",
                         }}
                       >
                         {difficulty.name}
-                      </span>
+                      </motion.div>
 
-                      <span
+                      <motion.div
+                        whileHover={{ scale: 1.02, y: -2 }}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
                         className="text-muted-foreground font-medium hover:text-bold transition-colors duration-300 "
                         style={{
                           color: isHovered ? difficulty.color : "inherit",
                         }}
                       >
                         {difficulty.solved}/{difficulty.total}
-                      </span>
+                      </motion.div>
                     </div>
                   );
                 })}
