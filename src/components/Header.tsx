@@ -3,16 +3,29 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [hideOnMobile, setHideOnMobile] = useState(false);
 
   useEffect(() => {
+    let lastScroll = window.scrollY;
+
     const handleScroll = () => {
       const current = window.scrollY;
 
+      /* Desktop pill logic */
       if (current > 60 && !scrolled) {
         setScrolled(true);
       } else if (current < 20 && scrolled) {
         setScrolled(false);
       }
+
+      /* Mobile hide/show logic */
+      if (current > lastScroll && current > 10) {
+        setHideOnMobile(true); // scrolling down
+      } else {
+        setHideOnMobile(false); // scrolling up
+      }
+
+      lastScroll = current;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -20,18 +33,25 @@ export const Header = () => {
   }, [scrolled]);
 
   return (
-    <header className="sticky top-0 z-50 flex justify-center">
+    <header
+      className={`
+        sticky top-0 z-50 flex justify-center
+        transition-transform duration-300 ease-out
+
+        /* Mobile auto-hide */
+        ${hideOnMobile ? "-translate-y-full" : "translate-y-0"}
+        lg:translate-y-0 
+      `}
+    >
       <div
         className={`
           flex items-center justify-between gap-8
           px-6 py-4 w-full max-w-4xl
           transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
 
-          /* MOBILE: always normal */
           bg-transparent border-transparent shadow-none
-          opacity-100 translate-y-0 scale-100
 
-          /* DESKTOP: animated pill */
+          /* Desktop floating pill */
           ${
             scrolled
               ? `
