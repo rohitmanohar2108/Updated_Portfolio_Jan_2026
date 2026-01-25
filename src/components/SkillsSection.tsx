@@ -56,7 +56,7 @@ const skills = [
     items: [
       { name: "React.js", icon: SiReact, color: "#61DAFB" },
       { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "Express.js", icon: SiExpress, color: "#FFFFFF" },
+      { name: "Express.js", icon: SiExpress, color: "#00599C" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
@@ -128,10 +128,10 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden mt-2"
     >
       {/* Background */}
-      <div className="absolute inset-0 grid-bg opacity-10" />
+      <div className="absolute inset-0 grid-bg opacity-10 bg-secondary" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/0 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative">
@@ -174,7 +174,7 @@ export function SkillsSection() {
             <motion.div
               key={category.category}
               variants={itemVariants}
-              className="group p-6 bg-card border rounded-br-none rounded-tl-none rounded-tr-[10%] rounded-bl-[10%] hover:border-accent/30 transition-colors"
+              className="group p-6 bg-card border rounded-br-none rounded-tl-none rounded-tr-[10%] rounded-bl-[10%]  transition-colors"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-6">
@@ -193,7 +193,7 @@ export function SkillsSection() {
                 {category.items.map((skill, index) => (   
                     <motion.div 
                       key={skill.name}
-                      className="flex items-center gap-3 p-3 bg-secondary/50 rounded-xl border border-border/50 hover:border-accent/30 hover:bg-secondary transition-all cursor-default"
+                      className="flex items-center gap-3 p-2 bg-secondary/50 rounded-3xl border border-border/50 hover:border-accent/30 hover:bg-secondary transition-all cursor-default"
                       whileHover={{ scale: 1.02, y: -2 }}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -201,7 +201,7 @@ export function SkillsSection() {
                       transition={{ delay: categoryIndex * 0.1 + index * 0.05 }}
                     >
                       <div
-                        className="p-2 rounded-lg bg-background border border-border"
+                        className="p-2 rounded-full bg-background border border-border"
                         style={{ color: skill.color }}
                       >
                         <skill.icon size={20} />
@@ -249,7 +249,9 @@ export function SkillsSection() {
                   {skill.name}
                 </span>
               </motion.div>
+              
             ))}
+            
           </motion.div>
         </motion.div>
       </div>

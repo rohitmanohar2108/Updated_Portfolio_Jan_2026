@@ -64,7 +64,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 grid-bg opacity-10" />
+      <div className="absolute inset-0 grid-bg opacity-10 bg-secondary" />
      
       
       <div className="max-w-7xl mx-auto relative">
@@ -182,7 +182,7 @@ export function ProjectsSection() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1.5 text-xs font-mono bg-secondary/80 text-secondary-foreground rounded-lg border border-border/50"
+                      className="px-3 py-1.5 text-xs font-mono bg-secondary/80 hover:bg-secondary transition text-secondary-foreground rounded-lg border border-border/50"
                     >
                       {tag}
                     </span>
@@ -215,7 +215,7 @@ export function ProjectsSection() {
             whileTap={{ scale: 0.98 }}
           >
             <span>View All Projects</span>
-            <div className="p-1.5 rounded-full bg-secondary group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+            <div className="p-1.5 rounded-full bg-secondary group-hover:bg-accent group-hover:text-accent-foreground transition-colors group-hover:rotate-45">
               <ArrowUpRight size={14} />
             </div>
           </motion.a>

@@ -21,10 +21,8 @@ const Index = () => {
           <Hero />
           <CodingProgress />
           <ProjectsSection />
-
+          <div className="border-t border-border mx-auto" />
           <SkillsSection />
-
-     
         </main>
         <Footer />
       </div>

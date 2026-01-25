@@ -59,7 +59,7 @@ export const Hero = () => {
           <SiJavascript className="text-2xl" /> JavaScript
         </span>{" "}
         and{" "}
-        <span className="inline-flex items-center gap-1 mx-1 text-xs text-slate-100">
+        <span className="inline-flex items-center gap-1 mx-1 text-xs text-black dark:text-slate-100">
           <SiSocketdotio className="text-2xl" /> Socket.IO
         </span>
       </h1>

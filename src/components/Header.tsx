@@ -73,9 +73,17 @@ export const Header = () => {
         `}
       >
         {/* Logo */}
-        <div className="font-mono font-bold text-lg">
-          <span className="text-primary">rohit</span>
-          <span className="text-muted-foreground">.dev</span>
+        <div className="flex items-center gap-3">
+          <img
+            src="https://imgcdn.stablediffusionweb.com/2024/3/13/c191e3ea-9659-4ea4-b008-f20320033311.jpg"
+            alt="Rohit"
+            className="w-9 h-9 rounded-full object-cover"
+          />
+
+          <div className="font-mono font-bold text-lg leading-none">
+            <span className="text-primary">rohit</span>
+            <span className="text-muted-foreground">.dev</span>
+          </div>
         </div>
 
         {/* Nav */}
