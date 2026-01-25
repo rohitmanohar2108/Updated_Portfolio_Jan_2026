@@ -13,7 +13,7 @@ const projects = [
     featured: true,
   },
   {
-    title: "Image Super Resolution",
+    title: "Imagery - Image Super Resolution",
     description: "Web application using Flask with integrated pipeline for low-light image enhancement and super-resolution. Built CNN-based self-supervised model using Zero-DCE and GANs.",
     tags: ["Python", "TensorFlow", "Keras", "Deep Learning"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
