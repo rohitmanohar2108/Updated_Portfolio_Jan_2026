@@ -138,7 +138,7 @@ export const Hero = () => {
   hover:shadow-2xl hover:shadow-black ease-out
     transform-gpu"
               >
-                Engineer
+                Developer
               </span>
               <span
                 className="bg-[#dcff6b] border border-black dark:border-white dark:text-black px-3 md:px-6 py-2 md:py-4 rounded-[20px] md:rounded-[40px] -ml-px animate-fade-in transition-transform duration-300
@@ -156,7 +156,7 @@ export const Hero = () => {
   hover:shadow-2xl hover:shadow-black ease-out
     transform-gpu"
               >
-                code
+                build
               </span>
               <span
                 className="border border-l-0 border-black dark:border-white px-3 md:px-6 py-2 md:py-4 animate-fade-in transition-transform duration-300

@@ -37,7 +37,6 @@ export const Header = () => {
       className={`
         sticky top-0 z-50 flex justify-center
         transition-transform duration-300 ease-out
-
         /* Mobile auto-hide */
         ${hideOnMobile ? "-translate-y-full" : "translate-y-0"}
         lg:translate-y-0 
