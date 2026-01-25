@@ -6,9 +6,10 @@ export const Footer = () => {
     <footer className="py-12 border-t border-border">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground font-mono">
-          © 2025 Rohit Manohar. Built with React, TypeScript & Tailwind.
+          © {new Date().getFullYear()} Rohit Manohar. Built with React,
+          TypeScript & Tailwind.
         </p>
-      
+
         <div className="flex items-center gap-4">
           <a
             href="mailto:manoharrohit372@gmail.com"
