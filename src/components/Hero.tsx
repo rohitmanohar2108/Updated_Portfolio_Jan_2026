@@ -33,8 +33,48 @@ export const Hero = () => {
   };
   return (
     <section className="py-16 md:py-24">
-      <p className="text-lg mb-2 text-muted-foreground font-mono">Hey there,</p>
-      <h1 className="text-3xl md:text-4xl font-mono font-bold mb-6">
+      <div
+        className="
+    relative inline-flex items-center
+    px-3 py-1.5 sm:px-3 sm:py-1
+    shadow-md shadow-accent/10
+    bg-[#1c1c1c]
+    border border-white/20
+    max-w-full
+  "
+      >
+        <span
+          className="
+      text-xs sm:text-sm
+      text-accent
+      font-medium
+      whitespace-nowrap
+    "
+        >
+         Hey there,
+        </span>
+
+        {/* Selection dots */}
+        {[
+          "top-0 left-0",
+          "top-0 right-0",
+          "bottom-0 left-0",
+          "bottom-0 right-0",
+        ].map((pos, i) => (
+          <span
+            key={i}
+            className={`
+        absolute ${pos}
+        w-1 h-1 sm:w-1.5 sm:h-1.5
+        bg-white/20
+        
+        -translate-x-0 translate-y-0
+      `}
+          />
+        ))}
+      </div>
+
+      <h1 className="text-3xl md:text-4xl font-mono font-bold mt-3">
         I'm{" "}
         <Tooltip
           containerClassName="link-underline cursor-pointer"
