@@ -6,7 +6,7 @@ const projects = [
   {
     title: "AirWise – Airline Reservation System",
     description: "A scalable full-stack airline reservation system enabling secure flight search, booking management, and transaction history tracking. Features 3NF MySQL database, JWT authentication with bcrypt password hashing.",
-    tags: ["MySQL", "React.js", "Node.js", "Express"],
+    tags: ["MySQL", "React.js", "Node.js", "Express", "Aiven Cloud"],
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
     github: "https://github.com/rohitmanohar2108/Airline_Reservation_System",
     live: "#",
@@ -22,7 +22,7 @@ const projects = [
     featured: true,
   },
   {
-    title: "Real-Time Chat Application",
+    title: "Scalable - Real-Time Chat Application",
     description: "Scalable real-time chat app with Node.js, TypeScript, and Next.js using Socket.IO in a Turborepo monorepo. Achieved sub-100ms message latency with Redis Pub/Sub and PostgreSQL on Aiven Cloud.",
     tags: ["Node.js", "Socket.IO", "PostgreSQL", "Redis", "Next.js"],
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
@@ -105,7 +105,7 @@ export function ProjectsSection() {
             <motion.div
               key={project.title}
               variants={itemVariants}
-              className={`group relative rounded-2xl border border-border bg-card overflow-hidden ${
+              className={`group relative border rounded-br-none rounded-tl-none rounded-tr-[10%] rounded-bl-[10%] bg-card overflow-hidden ${
                 project.featured ? 'lg:row-span-1' : ''
               }`}
               onMouseEnter={() => setHoveredIndex(index)}
