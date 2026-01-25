@@ -190,26 +190,26 @@ export function SkillsSection() {
 
               {/* Skills List */}
               <div className="grid grid-cols-2 gap-3">
-                {category.items.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    className="flex items-center gap-3 p-3 bg-secondary/50 rounded-xl border border-border/50 hover:border-accent/30 hover:bg-secondary transition-all cursor-default"
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: categoryIndex * 0.1 + index * 0.05 }}
-                  >
-                    <div
-                      className="p-2 rounded-lg bg-background border border-border"
-                      style={{ color: skill.color }}
+                {category.items.map((skill, index) => (   
+                    <motion.div 
+                      key={skill.name}
+                      className="flex items-center gap-3 p-3 bg-secondary/50 rounded-xl border border-border/50 hover:border-accent/30 hover:bg-secondary transition-all cursor-default"
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: categoryIndex * 0.1 + index * 0.05 }}
                     >
-                      <skill.icon size={20} />
-                    </div>
-                    <span className="text-sm font-medium text-foreground">
-                      {skill.name}
-                    </span>
-                  </motion.div>
+                      <div
+                        className="p-2 rounded-lg bg-background border border-border"
+                        style={{ color: skill.color }}
+                      >
+                        <skill.icon size={20} />
+                      </div>
+                      <span className="text-sm font-medium text-foreground">
+                        {skill.name}
+                      </span>
+                    </motion.div>
                 ))}
                 <motion.div
                   className="absolute bottom-0 left-0 h-1 bg-accent"

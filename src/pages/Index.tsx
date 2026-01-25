@@ -14,7 +14,7 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-4 max-w-4xl patterned-border">
         <div className="relative z-10 inset-0 dotted-bg opacity-30" />
         <Header />
         <main>

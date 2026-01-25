@@ -121,3 +121,70 @@
     @apply w-3 h-3 rounded-full;
   }
 }
+
+.patterned-border {
+  position: relative;
+}
+
+/* Base: hidden everywhere */
+.patterned-border::before,
+.patterned-border::after {
+  content: "";
+  display: none;
+}
+
+/* Show on LARGE devices only */
+@media (min-width: 1024px) {
+  .patterned-border::before,
+  .patterned-border::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 28px;
+    pointer-events: none;
+    opacity: 0.25;
+
+    /* LIGHT MODE pattern (default) */
+    background: repeating-linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.12),
+      rgba(0, 0, 0, 0.12) 4px,
+      transparent 4px,
+      transparent 8px
+    );
+
+    /* subtle fade */
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
+  .patterned-border::before {
+    left: -36px;
+  }
+
+  .patterned-border::after {
+    right: -36px;
+  }
+}
+
+/* DARK MODE override (separate, NOT nested) */
+@media (prefers-color-scheme: dark) {
+  @media (min-width: 1024px) {
+    .patterned-border::before,
+    .patterned-border::after {
+      background: repeating-linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.12),
+        rgba(255, 255, 255, 0.12) 4px,
+        transparent 4px,
+        transparent 8px
+      );
+    }
+  }
+}
