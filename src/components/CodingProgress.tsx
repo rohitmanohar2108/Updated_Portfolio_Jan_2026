@@ -91,7 +91,7 @@ const CodingProgress = () => {
             viewport={{ once: true }}
           >
             <Code2Icon size={14} className="text-accent" />
-            <span className="text-xs font-mono text-muted-foreground">LeetCode Progress</span>
+            <span className="text-xs font-mono text-muted-foreground">LEETCODE PROGRESS</span>
           </motion.div>
         </div>
         <div>
