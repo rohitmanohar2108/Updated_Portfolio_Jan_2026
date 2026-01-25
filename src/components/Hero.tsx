@@ -12,6 +12,7 @@ import {
   SiSocketdotio,
   SiTypescript,
 } from "react-icons/si";
+import HeroOrbs from "./HeroOrbs";
 
 export const Hero = () => {
   const containerVariants = {
@@ -33,7 +34,6 @@ export const Hero = () => {
   return (
     <section className="py-16 md:py-24">
       <p className="text-lg mb-2 text-muted-foreground font-mono">Hey there,</p>
-
       <h1 className="text-3xl md:text-4xl font-mono font-bold mb-6">
         I'm{" "}
         <Tooltip

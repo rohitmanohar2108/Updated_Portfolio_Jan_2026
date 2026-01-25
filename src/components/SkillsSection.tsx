@@ -36,6 +36,7 @@ import {
 import { VscVscode } from "react-icons/vsc";
 import { Cpu } from "lucide-react";
 import { useState } from "react";
+import HeroOrbs from "./HeroOrbs";
 
 const skills = [
   {
@@ -43,6 +44,7 @@ const skills = [
     gradient: "from-blue-500 to-cyan-500",
     items: [
       { name: "C/C++", icon: SiCplusplus, color: "#00599C" },
+      { name: "Python", icon: SiPython, color: "#3776AB" },
       { name: "SQL", icon: SiMysql, color: "#4479A1" },
       { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
       { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
@@ -73,13 +75,11 @@ const skills = [
     ],
   },
   {
-    category: "Mobile",
+    category: "DevOps",
     gradient: "from-orange-500 to-red-500",
     items: [
-      { name: "React Native", icon: SiReactNative, color: "#61DAFB" },
-      { name: "Flutter", icon: SiFlutter, color: "#02569B" },
-      { name: "Swift", icon: SiSwift, color: "#F05138" },
-      { name: "Kotlin", icon: SiKotlin, color: "#7F52FF" },
+      { name: "Docker", icon: SiDocker, color: "#2496ED" },
+      { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
     ],
   },
 ];
@@ -169,13 +169,12 @@ export function SkillsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-        
         >
           {skills.map((category, categoryIndex) => (
             <motion.div
               key={category.category}
               variants={itemVariants}
-              className="group p-6 bg-card border rounded-br-none rounded-tl-none rounded-tr-3xl rounded-bl-3xl hover:border-accent/30 transition-colors"
+              className="group p-6 bg-card border rounded-br-none rounded-tl-none rounded-tr-[10%] rounded-bl-[10%] hover:border-accent/30 transition-colors"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-6">

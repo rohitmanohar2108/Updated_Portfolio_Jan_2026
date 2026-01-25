@@ -1,4 +1,5 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import HeroOrbs from "./HeroOrbs";
 
 export const Footer = () => {
   return (
@@ -7,7 +8,7 @@ export const Footer = () => {
         <p className="text-sm text-muted-foreground font-mono">
           © 2025 Rohit Manohar. Built with React, TypeScript & Tailwind.
         </p>
-        
+      
         <div className="flex items-center gap-4">
           <a
             href="mailto:manoharrohit372@gmail.com"
