@@ -13,8 +13,12 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import HeroOrbs from "./HeroOrbs";
+import { useEffect, useRef } from "react";
+import DrawPath from "./DrawPath";
 
 export const Hero = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -31,11 +35,33 @@ export const Hero = () => {
       transition: { duration: 0.5 },
     },
   };
+
+  useEffect(() => {
+    if (!heroRef.current || !titleRef.current) return;
+
+    const tl = gsap.timeline({ delay: 2.5 });
+
+    // Parallax effect on scroll
+    gsap.to(".hero-content", {
+      yPercent: 30,
+      opacity: 0.3,
+      scrollTrigger: {
+        trigger: heroRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
   return (
     <section className="py-16 md:py-24">
       <p className="text-lg mb-2 text-muted-foreground font-mono">Hey there,</p>
 
-      <h1 className="text-3xl md:text-4xl font-mono font-bold mt-3">
+      <h1 className="text-3xl md:text-4xl font-mono font-bold mt-3 variable-weight">
         I'm{" "}
         <Tooltip
           containerClassName="link-underline cursor-pointer"
@@ -72,7 +98,7 @@ export const Hero = () => {
       >
         Computer Science undergrad at{" "}
         <Tooltip
-          containerClassName="text-foreground font-medium link-underline cursor-pointer"
+          containerClassName="text-foreground font-medium link-underline cursor-pointer variable-weight"
           content={<TooltipCard />}
         >
           NIT Karnataka
@@ -128,52 +154,8 @@ export const Hero = () => {
         . I've also solved 400+ coding problems and earned certifications in
         cloud & AI.
       </motion.div>
-
-      <AnimatedSection className="pt-32 md:pt-40 lg:pt-48 pb-6 md:pb-16 lg:pb-24 px-4 md:px-8 ">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 md:mb-10 inline-flex flex-col items-center">
-            <div className="flex items-center">
-              <span
-                className="border border-black dark:border-white px-3 md:px-6 py-2 md:py-4 animate-fade-in transition-transform duration-300
-  hover:scale-105 hover:-translate-y-2
-  hover:shadow-2xl hover:shadow-black ease-out
-    transform-gpu"
-              >
-                Developer
-              </span>
-              <span
-                className="bg-[#dcff6b] border border-black dark:border-white dark:text-black px-3 md:px-6 py-2 md:py-4 rounded-[20px] md:rounded-[40px] -ml-px animate-fade-in transition-transform duration-300
-  hover:scale-105 hover:-translate-y-2
-  hover:shadow-2xl hover:shadow-black ease-out
-    transform-gpu"
-              >
-                design
-              </span>
-            </div>
-            <div className="flex items-center -mt-px">
-              <span
-                className="border border-black dark:border-white px-3 md:px-6 py-2 md:py-4 animate-fade-in transition-transform duration-300
-  hover:scale-105 hover:-translate-y-2
-  hover:shadow-2xl hover:shadow-black ease-out
-    transform-gpu"
-              >
-                build
-              </span>
-              <span
-                className="border border-l-0 border-black dark:border-white px-3 md:px-6 py-2 md:py-4 animate-fade-in transition-transform duration-300
-  hover:scale-105 hover:-translate-y-2
-  hover:shadow-2xl hover:shadow-black ease-out
-    transform-gpu"
-              >
-                now
-              </span>
-            </div>
-          </h1>
-          <div>
-            <TextGenerateEffectDemo />
-          </div>
-        </div>
-      </AnimatedSection>
+      <DrawPath />
+      
     </section>
   );
 };

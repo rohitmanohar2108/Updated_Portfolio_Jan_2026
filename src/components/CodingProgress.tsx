@@ -109,7 +109,7 @@ const CodingProgress = () => {
                 <svg
                   width={size}
                   height={size}
-                  className="transform -rotate-90"
+                  className="transform -rotate-90 "
                 >
                   <defs>
                     {difficulties.map((difficulty) => (
@@ -142,7 +142,7 @@ const CodingProgress = () => {
                         fill="none"
                         stroke="currentColor"
                         strokeWidth={baseStrokeWidth}
-                        className="text-muted/20"
+                        className="text-muted/20 "
                       />
                     );
                   })}
@@ -164,7 +164,7 @@ const CodingProgress = () => {
                         strokeWidth={baseStrokeWidth}
                         strokeLinecap="round"
                         strokeDasharray={strokeDasharray}
-                        className="transition-all duration-300 cursor-pointer"
+                        className="transition-all duration-300 cursor-pointer "
                         style={{
                           opacity: isActive(difficulty.name) ? 1 : 0.15,
                           filter: isHovered
@@ -181,7 +181,7 @@ const CodingProgress = () => {
                 </svg>
 
                 {/* Center text */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <div className="absolute inset-0 flex flex-col items-center justify-center variable-weight" >
                   <span className="text-4xl font-bold text-foreground">
                     {totalSolved}
                   </span>
@@ -200,7 +200,7 @@ const CodingProgress = () => {
                     <div
                       key={difficulty.name}
                       className="flex items-center gap-3 cursor-pointer transition-transform duration-300
-  hover:scale-105 hover:-translate-y-2"
+  hover:scale-105 hover:-translate-y-2 "
                       style={{
                         opacity: isActive(difficulty.name) ? 1 : 0.3,
                       }}
@@ -222,7 +222,7 @@ const CodingProgress = () => {
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="font-medium hover:text-bold transition-colors duration-300"
+                        className="font-medium hover:text-bold transition-colors duration-300 "
                         style={{
                           color: isHovered ? difficulty.color : "inherit",
                         }}

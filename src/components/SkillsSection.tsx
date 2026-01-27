@@ -35,8 +35,6 @@ import {
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { Cpu } from "lucide-react";
-import { useState } from "react";
-import HeroOrbs from "./HeroOrbs";
 
 const skills = [
   {
@@ -124,7 +122,6 @@ const itemVariants = {
 };
 
 export function SkillsSection() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
     <section
       id="skills"

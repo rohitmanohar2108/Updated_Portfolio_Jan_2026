@@ -188,3 +188,47 @@
     }
   }
 }
+
+
+@layer components{
+  .variable-weight {
+    font-variation-settings: 'wght' 300;
+    transition: font-variation-settings 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .variable-weight:hover {
+    font-variation-settings: 'wght' 700;
+
+    
+  }
+
+  /* Slanted Reveal Button */
+  .btn-slanted {
+    @apply relative overflow-hidden px-8 py-4 uppercase tracking-widest text-sm font-medium;
+    background: transparent;
+    border: 1px solid hsl(var(--primary));
+    color: hsl(var(--foreground));
+  }
+
+  .btn-slanted::before {
+    content: '';
+    @apply absolute inset-0;
+    background: hsl(var(--primary));
+    transform: translateX(-101%) skewX(-15deg);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-slanted:hover::before {
+    transform: translateX(0) skewX(-15deg);
+  }
+
+  .btn-slanted span {
+    @apply relative z-10;
+    transition: color 0.3s ease;
+  }
+
+  .btn-slanted:hover span {
+    color: hsl(var(--background));
+  }
+
+}
