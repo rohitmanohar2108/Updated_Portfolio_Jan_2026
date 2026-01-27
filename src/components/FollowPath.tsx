@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -24,11 +24,11 @@ const FollowPath = () => {
 
     gsap.to(path, {
       strokeDashoffset: 0,
-      ease: 'none',
+      ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 60%',
-        end: 'bottom 40%',
+        start: "top 60%",
+        end: "bottom 40%",
         scrub: 1,
       },
     });
@@ -41,11 +41,11 @@ const FollowPath = () => {
         alignOrigin: [0.5, 0.5],
         autoRotate: false,
       },
-      ease: 'none',
+      ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 60%',
-        end: 'bottom 40%',
+        start: "top 60%",
+        end: "bottom 40%",
         scrub: 1,
       },
     });
@@ -56,10 +56,14 @@ const FollowPath = () => {
   }, []);
 
   const services = [
-    { icon: '🎨', title: 'UI/UX Design', desc: 'Beautiful, intuitive interfaces' },
-    { icon: '💻', title: 'Development', desc: 'Clean, performant code' },
-    { icon: '✨', title: 'Animation', desc: 'Smooth, engaging motion' },
-    { icon: '🚀', title: 'Optimization', desc: 'Fast, accessible products' },
+    {
+      icon: "🎨",
+      title: "UI/UX Design",
+      desc: "Beautiful, intuitive interfaces",
+    },
+    { icon: "💻", title: "Development", desc: "Clean, performant code" },
+    { icon: "✨", title: "Animation", desc: "Smooth, engaging motion" },
+    { icon: "🚀", title: "Optimization", desc: "Fast, accessible products" },
   ];
 
   return (
@@ -70,7 +74,9 @@ const FollowPath = () => {
     >
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
-          <span className="text-primary text-sm uppercase tracking-widest">Services</span>
+          <span className="text-primary text-sm uppercase tracking-widest">
+            Services
+          </span>
           <h2 className="text-4xl md:text-6xl font-bold mt-4">
             What I <span className="text-gradient">Offer</span>
           </h2>
@@ -97,10 +103,18 @@ const FollowPath = () => {
           {/* Follower Element */}
           <div
             ref={followerRef}
-            className="absolute w-16 h-16 -translate-x-1/2 -translate-y-1/2 z-10"
+            className="absolute -translate-x-1/2 -translate-y-1/2 z-10"
           >
-            <div className="w-full h-full rounded-full bg-orange-500 animate-pulse-glow flex items-center justify-center">
-              <div className="w-4 h-4 rounded-full bg-background" />
+            {/* Lens */}
+            <div className="relative w-16 h-16 rounded-full border-4 border-orange-500 bg-orange-200/10 backdrop-blur-sm shadow-[0_0_20px_rgba(249,115,22,0.6)] flex items-center justify-center">
+              {/* Lens highlight */}
+              <div className="absolute top-2 left-2 w-4 h-4 rounded-full bg-gray-300 dark:bg-white/30 " />
+
+              {/* Handle */}
+              <div className="absolute w-3 h-20 bg-orange-500 rounded-full origin-top -rotate-45 top-full left-11 -translate-y-2 shadow-md overflow-hidden">
+                {/* highlight line */}
+                <div className="absolute top-1 left-1 w-[4px] h-[90%] bg-white/70 dark:bg-black/70 rounded-full" />
+              </div>
             </div>
           </div>
 
@@ -111,7 +125,7 @@ const FollowPath = () => {
                 key={service.title}
                 className="card-hover p-6 rounded-xl border rounded-br-none rounded-tl-none rounded-tr-[10%] rounded-bl-[10%]text-center bg-card"
                 style={{
-                  marginTop: index % 2 === 0 ? '-80px' : '80px',
+                  marginTop: index % 2 === 0 ? "-80px" : "80px",
                 }}
               >
                 <span className="text-4xl mb-4 block">{service.icon}</span>
