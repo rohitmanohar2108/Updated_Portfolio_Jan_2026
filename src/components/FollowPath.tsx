@@ -66,7 +66,7 @@ const FollowPath = () => {
     <section
       id="services"
       ref={sectionRef}
-      className="py-18 relative overflow-hidden"
+      className="hidden sm:block py-18 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">

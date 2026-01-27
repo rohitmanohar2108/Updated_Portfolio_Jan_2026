@@ -55,7 +55,7 @@ const DrawPath = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-28 relative overflow-hidden"
+      className="py-28 relative overflow-hidden hidden sm:block"
     >
       <div className="container mx-auto px-6 relative">
         {/* SVG Path */}
