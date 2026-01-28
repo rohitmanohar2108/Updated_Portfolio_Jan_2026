@@ -123,7 +123,7 @@ const FollowPath = () => {
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className="card-hover p-6 rounded-xl border rounded-br-none rounded-tl-none rounded-tr-[10%] rounded-bl-[10%]text-center bg-card"
+                className="card-hover p-6 rounded-xl border rounded-br-none rounded-tl-none rounded-tr-[10%] rounded-bl-[10%]text-center bg-card "
                 style={{
                   marginTop: index % 2 === 0 ? "-80px" : "80px",
                 }}

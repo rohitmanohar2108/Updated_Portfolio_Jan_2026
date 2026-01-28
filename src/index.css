@@ -34,6 +34,19 @@
     --input: 0 0% 88%;
     --ring: 0 0% 8%;
 
+     --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 10%;
+
+    --radius: 0.5rem;
+
+    --hero-bg: 0 0% 100%;
+    --hero-headline: 0 0% 5%;
+    --cube-front: 0 0% 85%;
+    --cube-top: 0 0% 95%;
+    --cube-side: 0 0% 75%;
+    --cube-shadow: 0 0% 50%;
+
     --radius: 0.75rem;
 
     --font-sans: 'Space Grotesk', system-ui, sans-serif;
@@ -42,9 +55,31 @@
     --dotted-pattern: radial-gradient(circle, hsl(0 0% 75%) 1px, transparent 1px);
     --grid-pattern: linear-gradient(hsl(0 0% 90%) 1px, transparent 1px),
                     linear-gradient(90deg, hsl(0 0% 90%) 1px, transparent 1px);
+
+
   }
 
   .dark {
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 80%;
+
+    --hero-bg: 0 0% 4%;
+    --hero-headline: 0 0% 100%;
+    --cube-front: 0 0% 22%;
+    --cube-top: 0 0% 32%;
+    --cube-side: 0 0% 14%;
+    --cube-shadow: 0 0% 0%;
+
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 0% 60%;
+
     --background: 0 0% 6%;
     --foreground: 0 0% 96%;
 

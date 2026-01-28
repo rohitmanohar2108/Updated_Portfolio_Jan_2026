@@ -15,6 +15,8 @@ import {
 import HeroOrbs from "./HeroOrbs";
 import { useEffect, useRef } from "react";
 import DrawPath from "./DrawPath";
+import Footer3D from "./Footer3D";
+
 
 export const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -154,6 +156,7 @@ export const Hero = () => {
         . I've also solved 400+ coding problems and earned certifications in
         cloud & AI.
       </motion.div>
+      <Footer3D />
       <DrawPath />
       
     </section>

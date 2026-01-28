@@ -80,31 +80,33 @@ const CodingProgress = () => {
     <section
       id="progress"
       className="py-20 px-4 sm:px-6 lg:px-8 border-t border-border"
-      
     >
       <div className="max-w-6xl text-center">
         <div>
-           <motion.div
+          <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm mb-6"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
             <Code2Icon size={14} className="text-accent" />
-            <span className="text-xs font-mono text-muted-foreground">LEETCODE PROGRESS</span>
+            <span className="text-xs font-mono text-muted-foreground">
+              LEETCODE PROGRESS
+            </span>
           </motion.div>
         </div>
         <div>
           <div className="flex justify-center">
             <CardSpotlight className="group  w-full sm:w-auto sm:max-w-none border border-border rounded-2xl p-6 bg-card  transition-all duration-300 md:hover:shadow-lg sm:p-10 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
+              <div className="absolute top-0 left-0 right-0 h-px dark:bg-gradient-to-r from-transparent via-[#252525] to-transparent" />
+
               {/* Circular Progress Rings */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="relative z-50 
- "
+                className="relative z-50 "
               >
                 <svg
                   width={size}
@@ -181,7 +183,7 @@ const CodingProgress = () => {
                 </svg>
 
                 {/* Center text */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center variable-weight" >
+                <div className="absolute inset-0 flex flex-col items-center justify-center variable-weight">
                   <span className="text-4xl font-bold text-foreground">
                     {totalSolved}
                   </span>
