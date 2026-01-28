@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-
+import { motion } from "framer-motion";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 interface Milestone {
@@ -16,30 +16,36 @@ const milestones: Milestone[] = [
   {
     year: "2020",
     title: "Secondary Education",
-    description:
-      "School: Murtizapur Highschool Murtizapur",
-    skills: ["10 Board: 91.80%", "Elementary Art Grading Examination: B+", "Securing second place at a Taluka-level science exhibition",],
+    description: "School: Murtizapur Highschool Murtizapur",
+    skills: [
+      "10 Board: 91.80%",
+      "Elementary Art Grading Examination: B+",
+      "Securing second place at a Taluka-level science exhibition",
+    ],
   },
   {
     year: "2022",
     title: "Higher Secondary Education",
-    description:
-      "Collage: Dharampeth M.P. Deo Memorial Science College Nagpur",
-    skills: ["Secured All India Rank (AIR) 4891 in JEE Main with a 99.46 percentile", "Received the Gold Medal of Excellence in the SOF National Science Olympiad."],
+    description: "Collage: Dharampeth M.P. Deo Memorial Science College Nagpur",
+    skills: [
+      "Secured All India Rank (AIR) 4891 in JEE Main with a 99.46 percentile",
+      "Received the Gold Medal of Excellence in the SOF National Science Olympiad.",
+    ],
   },
   {
     year: "2022-2026",
     title: "Bachelor of Technology",
-    description:
-      "Computer Science and Engineering",
+    description: "Computer Science and Engineering",
     skills: ["Team leader of OS simulator course project "],
   },
   {
     year: "2023-2026",
     title: "Executive Member",
-    description:
-      "TEDx NITK Surathkal Club",
-    skills: ["Mentored 15+ students under a Summer mentorship program on Canva & illustration tools.", "Designed event posters and visual content, contributed to media strategies"],
+    description: "TEDx NITK Surathkal Club",
+    skills: [
+      "Mentored 15+ students under a Summer mentorship program on Canva & illustration tools.",
+      "Designed event posters and visual content, contributed to media strategies",
+    ],
   },
   {
     year: "Now",
@@ -173,7 +179,8 @@ const SpiralTimeline = () => {
   }, []);
 
   return (
-    <section id="My Journey"
+    <section
+      id="My Journey"
       ref={sectionRef}
       className="hidden sm:block  relative bg-background py-20 overflow-hidden"
     >
@@ -184,7 +191,7 @@ const SpiralTimeline = () => {
             My <span className="text-gradient">Journey</span>
           </h2>
           <p className="text-muted-foreground uppercase tracking-widest max-w-lg mx-auto">
-             — scroll to explore —
+            — scroll to explore —
           </p>
         </div>
 
@@ -377,16 +384,20 @@ const SpiralTimeline = () => {
                     </p>
 
                     {/* Skills */}
-                    <div className={`flex flex-wrap gap-1.5 justify-start`}>
-                      {milestone.skills.map((skill, skillIndex) => (
-                        <span
-                          key={skillIndex}
-                          className="px-2 py-0.5 bg-primary/10 text-primary text-xs font-medium rounded-full border border-primary/20"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
+                    <div className="flex flex-wrap gap-1.5 justify-start">
+  {milestone.skills.map((skill, skillIndex) => (
+    <span
+      key={skillIndex}
+      className="flex items-center gap-1.5 px-2 py-0.5 
+                 bg-primary/10 text-primary text-xs font-medium 
+                 rounded-sm border border-primary/20"
+    >
+      <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0 glow" />
+      {skill}
+    </span>
+  ))}
+</div>
+
                   </div>
                 </div>
               </div>

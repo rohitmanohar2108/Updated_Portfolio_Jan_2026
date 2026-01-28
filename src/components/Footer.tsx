@@ -1,5 +1,6 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import HeroOrbs from "./HeroOrbs";
+import { ArrowRight } from "lucide-react";
 
 export const Footer = () => {
   return (
