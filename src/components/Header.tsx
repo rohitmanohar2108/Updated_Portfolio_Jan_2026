@@ -88,6 +88,12 @@ export const Header = () => {
         {/* Nav */}
         <nav className="flex items-center gap-6">
           <a
+            href="#My Journey"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+          >
+            My Journey
+          </a>
+          <a
             href="#projects"
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
           >

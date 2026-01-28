@@ -74,12 +74,12 @@ const FollowPath = () => {
     >
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
-          <span className="text-primary text-sm uppercase tracking-widest">
-            Services
-          </span>
           <h2 className="text-4xl md:text-6xl font-bold mt-4">
-            What I <span className="text-gradient">Offer</span>
+            <span className="text-gradient">Services</span>
           </h2>
+          <span className="text-primary text-sm uppercase tracking-widest">
+            What I am good at
+          </span>
         </div>
 
         {/* SVG Container */}
@@ -106,12 +106,12 @@ const FollowPath = () => {
             className="absolute -translate-x-1/2 -translate-y-1/2 z-10"
           >
             {/* Lens */}
-            <div className="relative w-16 h-16 rounded-full border-4 border-orange-500 bg-orange-200/10 backdrop-blur-sm shadow-[0_0_20px_rgba(249,115,22,0.6)] flex items-center justify-center">
+            <div className="relative w-16 h-16 rounded-full border-4 border-accent bg-orange-200/10 backdrop-blur-sm shadow-[0_0_20px_rgba(249,115,22,0.6)] flex items-center justify-center">
               {/* Lens highlight */}
               <div className="absolute top-2 left-2 w-4 h-4 rounded-full bg-gray-300 dark:bg-white/30 " />
 
               {/* Handle */}
-              <div className="absolute w-3 h-20 bg-orange-500 rounded-full origin-top -rotate-45 top-full left-11 -translate-y-2 shadow-md overflow-hidden">
+              <div className="absolute w-3 h-20 bg-accent rounded-full origin-top -rotate-45 top-full left-11 -translate-y-2 shadow-md overflow-hidden">
                 {/* highlight line */}
                 <div className="absolute top-1 left-1 w-[4px] h-[90%] bg-white/70 dark:bg-black/70 rounded-full" />
               </div>

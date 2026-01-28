@@ -14,6 +14,8 @@ import { useLenis } from "@/hooks/useLenis";
 import Preloader from "@/components/Preloader";
 import DrawPath from "@/components/DrawPath";
 import FollowPath from "@/components/FollowPath";
+import SpiralTimeline from "@/components/SpiralTimeline";
+
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -38,6 +40,7 @@ const Index = () => {
           <Hero />
           <CodingProgress />
           <FollowPath />
+          <SpiralTimeline />
           <ProjectsSection />
           <div className="border-t border-border mx-auto" />
           <SkillsSection />
