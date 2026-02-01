@@ -140,6 +140,8 @@ const CodingProgress = () => {
                 </div>
               </div> */}
               {/* Circular Progress Rings */}
+              <div className="absolute top-0 bottom-0 right-0 w-px dark:bg-gradient-to-b from-transparent via-[#1a1a1a] to-transparent" />
+              <div className="absolute top-0 bottom-0 left-0 w-px dark:bg-gradient-to-b from-transparent via-[#1a1a1a] to-transparent" />
               <motion.div
                 variants={containerVariants}
                 initial="hidden"

@@ -18,6 +18,7 @@ import DrawPath from "./DrawPath";
 import Footer3D from "./Footer3D";
 
 
+
 export const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const heroRef = useRef<HTMLElement>(null);
@@ -108,7 +109,6 @@ export const Hero = () => {
         . Passionate about building scalable systems, real-time applications,
         and exploring ML/Deep Learning.
       </motion.div>
-
       <div className="mb-8">
         <h2 className="font-mono font-semibold text-sm text-muted-foreground  mb-4">
           What I'm into:

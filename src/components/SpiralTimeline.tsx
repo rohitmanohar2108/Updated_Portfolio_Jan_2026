@@ -351,7 +351,7 @@ const SpiralTimeline = () => {
                   className={`card-elevated p-5 transition-all duration-300 ${
                     isHovered || isActive
                       ? "border rounded-br-none rounded-tl-none rounded-tr-3xl rounded-bl-3xl shadow-lg"
-                      : "opacity-60"
+                      : "opacity-60 "
                   } ${isHovered ? "" : ""}`}
                 >
                   {/* Year badge */}

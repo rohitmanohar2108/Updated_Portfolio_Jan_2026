@@ -15,7 +15,7 @@ import Preloader from "@/components/Preloader";
 import DrawPath from "@/components/DrawPath";
 import FollowPath from "@/components/FollowPath";
 import SpiralTimeline from "@/components/SpiralTimeline";
-import Footer3D from "@/components/Footer3D";
+
 
 
 const Index = () => {
@@ -38,6 +38,7 @@ const Index = () => {
         ></div>
         <Header />
         <main>
+       
           <Hero />
 
           <CodingProgress />
