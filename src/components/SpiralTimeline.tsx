@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { motion } from "framer-motion";
+import { FaCalendar } from "react-icons/fa";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 interface Milestone {
@@ -361,13 +362,19 @@ const SpiralTimeline = () => {
                         : "bg-muted text-muted-foreground"
                     }`}
                   >
+                    <FaCalendar className="inline-block mr-2 mb-1" />
+
                     {milestone.year}
                   </div>
 
                   {/* Title */}
                   <h3
                     className={`text-lg font-bold mb-2 transition-colors duration-300 ${
-                      isHovered ? "text-accent" : isActive ? "text-foreground" : "text-muted-foreground"
+                      isHovered
+                        ? "text-accent"
+                        : isActive
+                          ? "text-foreground"
+                          : "text-muted-foreground"
                     }`}
                   >
                     {milestone.title}
