@@ -17,6 +17,7 @@ import FollowPath from "@/components/FollowPath";
 import SpiralTimeline from "@/components/SpiralTimeline";
 import Footer3D from "@/components/Footer3D";
 
+
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   useLenis();
@@ -38,7 +39,7 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
-          
+
           <CodingProgress />
           <FollowPath />
           <SpiralTimeline />
@@ -46,7 +47,7 @@ const Index = () => {
           <div className="border-t border-border mx-auto" />
           <SkillsSection />
         </main>
-          
+
         <Footer />
       </div>
     </div>

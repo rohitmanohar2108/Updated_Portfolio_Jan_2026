@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CardSpotlight } from "./ui/card-spotlight";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Code2Icon } from "lucide-react";
+import OrangeLamp from "./OrangeLamp";
 const CodingProgress = () => {
   const [hoveredDifficulty, setHoveredDifficulty] = useState<string | null>(
     null,
@@ -97,6 +98,7 @@ const CodingProgress = () => {
             viewport={{ once: true }}
           >
             <Code2Icon size={14} className="text-accent" />
+            <div className="" />
             <span className="text-xs font-mono text-muted-foreground">
               LEETCODE PROGRESS
             </span>
@@ -104,10 +106,13 @@ const CodingProgress = () => {
         </div>
         <div>
           <div className="flex justify-center">
+            <div className="absolute z-50">
+              <OrangeLamp width="170px" />
+            </div>
             <CardSpotlight className="group  w-full sm:w-auto sm:max-w-none border border-border rounded-2xl p-6 bg-card  transition-all duration-300 md:hover:shadow-lg sm:p-10 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
               <div className="absolute top-0 left-0 right-0 h-px dark:bg-gradient-to-r from-transparent via-[#252525] to-transparent" />
 
-              <div className="hidden sm:block z-50">
+              {/* <div className="hidden sm:block z-50">
                 <div className="grid grid-cols-2 md:grid-cols-1">
                   <motion.div
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm mb-3"
@@ -133,7 +138,7 @@ const CodingProgress = () => {
                     </a>
                   ))}
                 </div>
-              </div>
+              </div> */}
               {/* Circular Progress Rings */}
               <motion.div
                 variants={containerVariants}

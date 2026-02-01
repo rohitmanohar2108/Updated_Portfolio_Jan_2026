@@ -367,7 +367,7 @@ const SpiralTimeline = () => {
                   {/* Title */}
                   <h3
                     className={`text-lg font-bold mb-2 transition-colors duration-300 ${
-                      isActive ? "text-foreground" : "text-muted-foreground"
+                      isHovered ? "text-accent" : isActive ? "text-foreground" : "text-muted-foreground"
                     }`}
                   >
                     {milestone.title}
@@ -385,19 +385,18 @@ const SpiralTimeline = () => {
 
                     {/* Skills */}
                     <div className="flex flex-wrap gap-1.5 justify-start">
-  {milestone.skills.map((skill, skillIndex) => (
-    <span
-      key={skillIndex}
-      className="flex items-center gap-1.5 px-2 py-0.5 
+                      {milestone.skills.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="flex items-center gap-1.5 px-2 py-0.5 
                  bg-primary/10 text-primary text-xs font-medium 
                  rounded-sm border border-primary/20"
-    >
-      <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0 glow" />
-      {skill}
-    </span>
-  ))}
-</div>
-
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0 glow" />
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
