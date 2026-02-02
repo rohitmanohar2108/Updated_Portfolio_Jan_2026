@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { motion } from "framer-motion";
-import { FaCalendar } from "react-icons/fa";
+import { FaCalendar, FaCalendarAlt } from "react-icons/fa";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 interface Milestone {
@@ -356,14 +356,17 @@ const SpiralTimeline = () => {
                 >
                   {/* Year badge */}
                   <div
-                    className={`inline-block px-3 py-1 rounded-full text-sm font-bold mb-2 transition-all duration-300 ${
+                    className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-bold mb-2 transition-all duration-300 ${
                       isActive
                         ? "bg-primary/20 text-primary"
                         : "bg-muted text-muted-foreground"
                     }`}
                   >
-                    <FaCalendar className="inline-block mr-2 mb-1" />
-
+                    {isHovered ? (
+                      <FaCalendarAlt className="mr-2 mb-1 transition-transform duration-300 " />
+                    ) : (
+                      <FaCalendar className="mr-2 mb-1 transition-transform duration-300" />
+                    )}
                     {milestone.year}
                   </div>
 

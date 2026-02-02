@@ -271,17 +271,9 @@ const Footer3D = () => {
             style={{ animation: "cubeFloat 8s ease-in-out infinite" }}
           >
             {/* Main box face - perfectly straight */}
-            <div
-              className="absolute inset-0 rounded-2xl border border-[#1e1e1e] overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(180deg, #131313 0%, #0c0c0c 50%, #0a0a0a 100%)",
-                boxShadow:
-                  "0 30px 80px -20px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.03) inset",
-              }}
-            >
+            <div className="absolute inset-0 rounded-2xl border border-[#1e1e1e] overflow-hidden">
               {/* Subtle top highlight */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2a2a2a] to-transparent" />
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1a1a1a] to-transparent" />
 
               {/* Inner content area */}
               <div className="absolute inset-4 rounded-xl bg-[#0e0e0e] border border-[#191919] overflow-hidden">
