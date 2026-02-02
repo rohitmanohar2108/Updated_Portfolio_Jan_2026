@@ -45,7 +45,7 @@ const Index = () => {
           <div className="border-t border-border mx-auto" />
           <SkillsSection />
           <motion.div
-            className="absolute left-1/4 top-1 h-[600px] w-[600px] rounded-full"
+            className="hidden sm:block absolute left-1/4 top-1 h-[600px] w-[600px] rounded-full"
             style={{
               background:
                 "radial-gradient(circle, hsl(270 80% 65% / 0.12) 0%, transparent 70%)",
