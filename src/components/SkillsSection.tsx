@@ -130,7 +130,7 @@ export function SkillsSection() {
       {/* Background */}
       <div className="absolute inset-0 grid-bg opacity-10 bg-secondary" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/0 rounded-full blur-3xl" />
-
+     
       <div className="max-w-7xl mx-auto relative">
         {/* Section Header */}
         <motion.div
@@ -229,6 +229,31 @@ export function SkillsSection() {
             // Relevant Courses I Took
           </p>
           <motion.div
+            className="hidden sm:block absolute -left-1/2 h-[600px] w-[700px] rounded-full"
+            style={{
+              background:
+                "radial-gradient(circle, hsl(270 80% 65% / 0.12) 0%, transparent 70%)",
+            }}
+            animate={{
+              scale: [1, 1.2, 1],
+              x: [-50, 50, -50],
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div
+            className="hidden sm:block absolute -right-1/2 h-[600px] w-[700px] rounded-full"
+            style={{
+              background:
+                "radial-gradient(circle, hsl(270 80% 65% / 0.12) 0%, transparent 70%)",
+            }}
+            animate={{
+              scale: [1, 1.2, 1],
+              x: [-50, 50, -50],
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          <motion.div
             className="flex flex-wrap justify-center gap-3"
             variants={containerVariants}
             initial="hidden"
@@ -239,7 +264,7 @@ export function SkillsSection() {
               <motion.div
                 key={skill.name}
                 variants={itemVariants}
-                className="flex items-center gap-2 px-4 py-2.5 bg-card border border-border rounded-full hover:border-accent/50 hover:bg-secondary/50 transition-all cursor-default"
+                className="flex items-center gap-2 px-4 py-2.5 bg-card border border-border rounded-full hover:border-accent/50 hover:bg-secondary/50 transition-all cursor-default z-50"
                 whileHover={{ scale: 1.05, y: -2 }}
               >
                 <span className="text-sm font-medium text-foreground">
